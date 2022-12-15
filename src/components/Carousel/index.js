@@ -1,4 +1,4 @@
-import { MovieSlider } from "./MovieSlider";
+import { MovieSlider } from "./components/MovieSlider";
 import { ContentWrapper } from "./styles";
 import { API_URL } from '../../services/API_URL'
 import { useEffect, useState } from "react";
