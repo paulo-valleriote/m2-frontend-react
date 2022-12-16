@@ -4,6 +4,7 @@ export const ContentWrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 10rem;
 
   padding: 2rem 0;
 `;
@@ -12,13 +13,15 @@ export const Logo = styled.div`
   display: flex;
   align-items: center;
 
-  font-size: 2rem;
-
   gap: 0.5rem;
 
   img {
     width: 2.6rem;
     height: 2.6rem;
+  }
+
+  h1 {
+    font-size: 1.875rem;
   }
 `;
 

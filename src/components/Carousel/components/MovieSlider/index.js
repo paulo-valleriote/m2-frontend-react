@@ -7,7 +7,7 @@ import nextArrow from '../../../../assets/arrow-right-dark.svg'
 import { Card, ContentWrapper } from "./styles";
 import { SampleArrow } from "./SampleArrow";
 
-export const MovieSlider = ({ movies }) => {
+export const MovieSlider = ({ movies, openModal }) => {
 
   return (
     <ContentWrapper>
@@ -24,10 +24,23 @@ export const MovieSlider = ({ movies }) => {
       >
         {movies.map(movie => {
           return (
-            <Card bgImg={movie.moviePoster} key={movie.movieId}>
+            <Card
+              bgImg={movie.moviePoster}
+              onClick={() => openModal(movie)}
+              key={movie.movieId}
+            >
               <div>
-                <span>{movie.movieTitle}</span>
-                <span><img src={scoreStarIcon} alt="score" />{movie.movieScore}</span>
+                <span
+                  title={movie.movieTitle}
+                  className="movieTitle"
+                >
+                  {movie.movieTitle}
+                </span>
+
+                <span className="movieScore">
+                  {movie.movieScore}
+                  <img src={scoreStarIcon} alt="score" />
+                </span>
               </div>
             </Card>
           )

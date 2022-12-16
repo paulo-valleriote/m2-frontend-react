@@ -7,7 +7,7 @@ export const Header = () => {
     <ContentWrapper>
       <Logo>
         <img src={logo} alt="Logo" />
-        <h2>CUBOS FLIX</h2>
+        <h1>CUBOS FLIX</h1>
       </Logo>
       <InputsWrapper>
         <input placeholder='Digite o nome do filme' />

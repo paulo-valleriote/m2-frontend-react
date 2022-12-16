@@ -4,7 +4,7 @@ import { ContentWrapper } from "./styles";
 import { API_URL } from "../../services/API_URL";
 import { useEffect, useState } from "react";
 
-export const MovieHighlight = () => {
+export const MovieHighlight = ({ getGenresName }) => {
   const [movieInfos, setMovieInfos] = useState([]);
 
   const getTodaysHighlight = async () => {
@@ -53,6 +53,7 @@ export const MovieHighlight = () => {
         overview={movieInfos.overview}
         releaseDate={movieInfos.release_date}
         vote_average={movieInfos.vote_average}
+        getGenresName={getGenresName}
       />
     </ContentWrapper>
   );

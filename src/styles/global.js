@@ -6,13 +6,13 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
+  
   :root {
-    --bg-color: #FFFFFF;
-    --secondary-bg-color: #EDEDED;
-    --text-color: #1B2028;
-    --score-color: #F1C40F;
-    --modal-genres-bg-color: #FE0078;
+    --bg-color: ${props => props.theme.bgColor}; 
+    --secondary-bg-color: ${props => props.theme.bgSecondaryColor}; 
+    --text-color: ${props => props.theme.textColor}; 
+    --score-color: ${props => props.theme.scoreColor}; 
+    --modal-genres-bg-color: ${props => props.theme.modalBg}; 
   }
 
   html {
@@ -40,5 +40,29 @@ export const GlobalStyles = createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  .react-modal-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.5);
+  }
+
+  .react-modal-content {
+      width: 100%;
+      max-width: 49.5rem;
+      max-height: 50.5rem;
+      background: var(--secondary-bg-color);
+      padding: 3rem;
+      position: relative;
+      border-radius: 0.25rem;
   }
 `;

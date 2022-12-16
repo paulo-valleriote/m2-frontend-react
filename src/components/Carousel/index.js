@@ -3,7 +3,7 @@ import { ContentWrapper } from "./styles";
 import { API_URL } from '../../services/API_URL'
 import { useEffect, useState } from "react";
 
-export const Carousel = () => {
+export const Carousel = (props) => {
   const [movieList, setMovieList] = useState([]);
 
   const getMovies = async () => {
@@ -37,7 +37,7 @@ export const Carousel = () => {
   return (
     <ContentWrapper>
       <div>
-        <MovieSlider movies={movieList} />
+        <MovieSlider movies={movieList} openModal={props.openModal} />
       </div>
     </ContentWrapper>
   );
