@@ -1,12 +1,10 @@
-import playIcon from '../../../assets/play.svg'
 import { VideoLink } from './styles';
 
-export const HighlightImage = ({ backdrop_path }) => {
+export const HighlightImage = ({ name, link }) => {
   return (
-    <a href='/' target="_blank">
-      <VideoLink bgImg={backdrop_path}>
-        <img src={playIcon} alt='Play' />
-      </VideoLink>
-    </a>
+    <VideoLink
+      src={`https://www.youtube.com/embed/${link}`}
+      title={name}
+    />
   );
 };

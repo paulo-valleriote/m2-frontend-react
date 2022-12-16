@@ -9,10 +9,11 @@ export const MovieHighlight = ({ getGenresName }) => {
 
   const getTodaysHighlight = async () => {
     try {
-      const res = await API_URL.get('/movie/popular');
-      const todaysHighlight = res.data.results[0];
+      const highlightInfo = await API_URL.get('/movie/popular');
+      const todaysHighlight = highlightInfo.data.results[0];
 
       const {
+        id,
         backdrop_path,
         genre_ids,
         title,
@@ -21,7 +22,12 @@ export const MovieHighlight = ({ getGenresName }) => {
         vote_average
       } = await todaysHighlight;
 
-      return { backdrop_path, genre_ids, title, release_date, overview, vote_average }
+      const highlightMovieInfo = await API_URL.get(`/movie/${id}/videos`)
+
+      const { name, key } = highlightMovieInfo.data.results
+        .filter(movie => movie.name.includes('Trailer') && movie.official)[0]
+
+      return { id, backdrop_path, genre_ids, title, release_date, overview, vote_average, name, key }
     } catch (error) {
       console.log(error)
     }
@@ -41,11 +47,11 @@ export const MovieHighlight = ({ getGenresName }) => {
     getHighlight();
   }, [])
 
-
   return (
     <ContentWrapper>
       <HighlightImage
-        backdrop_path={movieInfos.backdrop_path}
+        videoName={movieInfos.name}
+        link={movieInfos.key}
       />
       <HighlightInfos
         title={movieInfos.title}
