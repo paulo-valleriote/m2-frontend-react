@@ -2,17 +2,22 @@ import React from 'react';
 import Modal from 'react-modal'
 import ReactDOM from 'react-dom/client';
 import { Home } from './pages/Home';
+import { ThemeContext, ThemeContextProvider } from './contexts/ThemeContext';
 import { GlobalStyles } from './styles/global';
-
-import { defaultTheme } from './components/ThemeContext';
 
 Modal.setAppElement('#root')
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-console.log(defaultTheme)
+
 root.render(
-  <React.StrictMode>
-    <Home />
-    <GlobalStyles theme={defaultTheme} />
-  </React.StrictMode>
+  <ThemeContextProvider>
+    <React.StrictMode>
+      <Home />
+    </React.StrictMode>
+    <ThemeContext.Consumer>
+      {({ theme }) => (
+        <GlobalStyles theme={theme} />
+      )}
+    </ThemeContext.Consumer>
+  </ThemeContextProvider>
 );

@@ -27,6 +27,8 @@ export const GlobalStyles = createGlobalStyle`
   body {
     color: var(--text-color);
     background-color: var(--bg-color);
+
+    transition: color 0.3s, background-color 0.2s;
   }
   
   body, input, textarea, button {

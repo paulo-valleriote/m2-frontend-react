@@ -12,7 +12,14 @@ export const Card = styled.div`
   background-position: center;
   background-repeat: no-repeat;
 
+  transition: transform 0.2s, margin-bottom 0.2s;
+
   cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+    margin-bottom: 0.5rem;
+  }
 
   div {
     display: flex;

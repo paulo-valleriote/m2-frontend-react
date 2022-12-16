@@ -1,10 +1,15 @@
+import { useState } from "react"
+
+import { API_URL } from "../services/API_URL"
+
 import { Header } from "../components/Header"
 import { MovieHighlight } from "../components/MovieHighlight"
 import { Carousel } from "../components/Carousel"
-import { ContentWrapper } from "./styles"
-import { useState } from "react"
-import { API_URL } from "../services/API_URL"
 import { MovieModal } from "../components/MovieModal"
+
+import { ThemeContext } from '../contexts/ThemeContext'
+
+import { ContentWrapper } from "./styles"
 
 export const Home = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -45,15 +50,31 @@ export const Home = () => {
 
   return (
     <ContentWrapper>
-      <Header />
-      <Carousel openModal={openModal} />
-      <MovieHighlight getGenresName={getGenresName} />
-      <MovieModal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        movieInfos={modalMovieInfos}
-        genresNames={modalGenres}
-      />
+
+      <ThemeContext.Consumer>
+        {({ theme, changeTheme }) => (
+          <>
+
+            <Header
+              theme={theme}
+              changeTheme={changeTheme}
+            />
+
+            <Carousel openModal={openModal} />
+
+            <MovieHighlight getGenresName={getGenresName} />
+
+            <MovieModal
+              isOpen={modalIsOpen}
+              onRequestClose={closeModal}
+              movieInfos={modalMovieInfos}
+              genresNames={modalGenres}
+            />
+
+          </>
+        )}
+      </ThemeContext.Consumer>
+
     </ContentWrapper>
   )
 }

@@ -4,7 +4,12 @@ export const SampleArrow = (props) => {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: `url(${props.direction})`, backgroundRepeat: 'no-repeat' }}
+      style={{
+        ...style,
+        display: "block",
+        background: `url(${props.direction})`,
+        backgroundRepeat: 'no-repeat'
+      }}
       onClick={onClick}
     />
   );
