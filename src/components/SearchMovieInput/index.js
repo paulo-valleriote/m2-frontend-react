@@ -1,3 +1,4 @@
+import { Scrollbar } from 'react-scrollbars-custom'
 import { useState, useRef } from 'react'
 import { API_URL } from '../../services/API_URL';
 import { ContentWrapper, DropDownList, SearchInput, Suggestions } from './style';
@@ -65,19 +66,21 @@ export const SearchMovieInput = () => {
         ref={textInput}
       />
       <DropDownList hasContent={listHasContent} >
-        {movieSuggestions.map(movieSuggestion => (
-          <Suggestions
-            value={movieSuggestion.movieTitle}
-            key={movieSuggestion.movieId}
-            onClick={(event) => openSearchedMovieModal(movieSuggestion, event.target)}
-          >
-            <img
-              src={`https://image.tmdb.org/t/p/w500${movieSuggestion.moviePoster}`}
-              alt='poster'
-            />
-            {movieSuggestion.movieTitle}
-          </Suggestions>
-        ))}
+        <Scrollbar style={{ width: 270, height: 250 }}>
+          {movieSuggestions.map(movieSuggestion => (
+            <Suggestions
+              value={movieSuggestion.movieTitle}
+              key={movieSuggestion.movieId}
+              onClick={(event) => openSearchedMovieModal(movieSuggestion, event.target)}
+            >
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movieSuggestion.moviePoster}`}
+                alt='poster'
+              />
+              {movieSuggestion.movieTitle}
+            </Suggestions>
+          ))}
+        </Scrollbar>
       </DropDownList>
 
       <MovieModal

@@ -33,8 +33,7 @@ export const DropDownList = styled.div`
 
   max-width: 18.75rem;
   max-height: 20rem;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+  overflow: hidden;
 
   padding: 1rem;
 

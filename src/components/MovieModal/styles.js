@@ -28,6 +28,18 @@ export const ModalMovieAbout = styled.div`
     justify-content: space-between;
   }
 
+  .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      overflow-y: scroll;
+    }
+  }
+
   .movieGenresAndScore {
     margin-top: 1.25rem;
   }

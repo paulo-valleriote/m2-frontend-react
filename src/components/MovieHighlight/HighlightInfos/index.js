@@ -1,3 +1,4 @@
+import { intlFormat } from 'date-fns'
 import { useEffect, useState } from "react"
 import { ContentWrapper, HighlightDescription, HighlightGenresAndLaunchDate, HighlightTitleAndScore } from "./styles"
 
@@ -31,7 +32,13 @@ export const HighlightInfos = ({ genres_ids, title, releaseDate, overview, vote_
 
       <HighlightGenresAndLaunchDate>
         <div>
-          <span>{genreName}</span> / <span> {releaseDate}</span>
+          <span>
+            {genreName}
+          </span>
+          /
+          <span>
+
+          </span>
         </div>
       </HighlightGenresAndLaunchDate>
 

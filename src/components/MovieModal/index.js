@@ -19,7 +19,9 @@ export const MovieModal = ({ isOpen, onRequestClose, movieInfos, genresNames }) 
           alt="Poster do Filme"
         />
         <ModalMovieAbout>
-          {movieInfos.movieAbout || "(Este filme não possui descrição)"}
+          <div className='description'>
+            {movieInfos.movieAbout || "(Este filme não possui descrição)"}
+          </div>
           <div className='movieGenresAndScore'>
             <ModalMovieGenre>
               {genresNames.map(genre =>
