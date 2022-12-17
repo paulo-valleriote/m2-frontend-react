@@ -56,6 +56,8 @@ export const GlobalStyles = createGlobalStyle`
     align-items: center;
 
     background: rgba(0,0,0,0.5);
+
+    z-index: 100;
   }
 
   .react-modal-content {
@@ -66,5 +68,7 @@ export const GlobalStyles = createGlobalStyle`
       padding: 3rem;
       position: relative;
       border-radius: 0.25rem;
+
+      z-index: 101;
   }
 `;

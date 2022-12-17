@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import scoreStarIcon from '../../../../assets/estrela.svg'
 
 import { Card, ContentWrapper } from "./styles";
-import { SampleArrow } from "./SampleArrow";
+import { SampleArrow } from "../SampleArrow";
 import { ThemeContext } from "../../../../contexts/ThemeContext";
 
 export const MovieSlider = ({ movies, openModal }) => {

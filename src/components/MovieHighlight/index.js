@@ -1,4 +1,4 @@
-import { HighlightImage } from "./HighlightImage";
+import { VideoPlayer } from "../VideoPlayer/index";
 import { HighlightInfos } from "./HighlightInfos";
 import { ContentWrapper } from "./styles";
 import { API_URL } from "../../services/API_URL";
@@ -49,7 +49,7 @@ export const MovieHighlight = ({ getGenresName }) => {
 
   return (
     <ContentWrapper>
-      <HighlightImage
+      <VideoPlayer
         videoName={movieInfos.name}
         link={movieInfos.key}
       />

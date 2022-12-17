@@ -6,8 +6,13 @@ export const HighlightInfos = ({ genres_ids, title, releaseDate, overview, vote_
 
   useEffect(() => {
     const genres = async () => {
-      await getGenresName(genres_ids)
-        .then(res => setGenreName(res.join(', ')))
+      try {
+        const res = await getGenresName(genres_ids)
+
+        return setGenreName(res.join(', '))
+      } catch (error) {
+        return console.log(error)
+      }
     }
     genres();
   }, [getGenresName, genres_ids])

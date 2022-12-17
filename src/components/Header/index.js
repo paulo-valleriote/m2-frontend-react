@@ -1,7 +1,8 @@
 import { ContentWrapper, InputsWrapper, Logo } from './styles';
 import { ThemeContext } from '../../contexts/ThemeContext';
+import { SearchMovieInput } from '../SearchMovieInput';
 
-export const Header = ({ theme, changeTheme }) => {
+export const Header = ({ theme, changeTheme, suggestions }) => {
   return (
     <ContentWrapper>
       <Logo>
@@ -9,7 +10,7 @@ export const Header = ({ theme, changeTheme }) => {
         <h1>CUBOS FLIX</h1>
       </Logo>
       <InputsWrapper>
-        <input placeholder='Digite o nome do filme' />
+        <SearchMovieInput />
         <ThemeContext.Consumer>
           {() => (
             <img

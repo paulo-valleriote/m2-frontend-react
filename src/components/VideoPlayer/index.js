@@ -1,6 +1,6 @@
 import { VideoLink } from './styles';
 
-export const HighlightImage = ({ name, link }) => {
+export const VideoPlayer = ({ name, link }) => {
   return (
     <VideoLink
       src={`https://www.youtube.com/embed/${link}`}

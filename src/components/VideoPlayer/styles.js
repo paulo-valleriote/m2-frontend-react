@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
 export const VideoLink = styled.iframe`
-  width: 35rem;
-  height: 19.625rem;
+  max-width: 35rem;
+  width: 100%;
+  max-height: 19.625rem;
+  height: 100%;
 
   border: 0;
 `;

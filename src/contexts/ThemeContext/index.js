@@ -44,12 +44,17 @@ export const ThemeContext = createContext({
 
 
 export const ThemeContextProvider = (props) => {
-  const [theme, setTheme] = useState(themes.light);
+  const [theme, setTheme] = useState((localStorage.getItem('theme') === 'dark' ? themes.dark : themes.light) || themes.dark);
 
   const changeTheme = () => {
-    theme === themes.light
-      ? setTheme(themes.dark)
-      : setTheme(themes.light)
+    if (theme === themes.light) {
+      setTheme(themes.dark)
+      localStorage.setItem('theme', 'dark')
+    }
+    else {
+      setTheme(themes.light)
+      localStorage.setItem('theme', 'light')
+    }
   }
 
   return (

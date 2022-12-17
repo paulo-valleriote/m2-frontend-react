@@ -1,5 +1,5 @@
 import Modal from 'react-modal'
-import { ModalContentWrapper, ModalMovieAbout, ModalMovieGenre, ModalGenres, ModalTitle } from './styles'
+import { ModalContentWrapper, ModalMovieAbout, ModalMovieGenre, ModalTitle } from './styles'
 
 export const MovieModal = ({ isOpen, onRequestClose, movieInfos, genresNames }) => {
 
@@ -10,7 +10,7 @@ export const MovieModal = ({ isOpen, onRequestClose, movieInfos, genresNames }) 
       overlayClassName='react-modal-overlay'
       className='react-modal-content'
     >
-      <ModalContentWrapper>
+      <ModalContentWrapper moldalIsOpen={isOpen}>
         <ModalTitle>
           {movieInfos.movieTitle}
         </ModalTitle>

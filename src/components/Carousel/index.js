@@ -1,9 +1,9 @@
+import { useEffect, useState } from "react";
+import { API_URL } from "../../services/API_URL";
 import { MovieSlider } from "./components/MovieSlider";
 import { ContentWrapper } from "./styles";
-import { API_URL } from '../../services/API_URL'
-import { useEffect, useState } from "react";
 
-export const Carousel = (props) => {
+export const Carousel = ({ openModal }) => {
   const [movieList, setMovieList] = useState([]);
 
   const getMovies = async () => {
@@ -34,10 +34,11 @@ export const Carousel = (props) => {
   useEffect(() => {
     getMovies().then(res => setMovieList(res))
   }, [])
+
   return (
     <ContentWrapper>
       <div>
-        <MovieSlider movies={movieList} openModal={props.openModal} />
+        <MovieSlider movies={movieList} openModal={openModal} />
       </div>
     </ContentWrapper>
   );

@@ -31,18 +31,6 @@ export const InputsWrapper = styled.div`
 
   gap: 4rem;
 
-  input {
-    width: 18.75rem;
-    height: 3rem;
-
-    padding: 1rem;
-
-    font-size: 1rem;
-
-    background-color: var(--secondary-bg-color);
-    border: none;
-  }
-
   img {
     width: 2rem;
     height: 2rem;

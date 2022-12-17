@@ -11,9 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <ThemeContextProvider>
-    <React.StrictMode>
-      <Home />
-    </React.StrictMode>
+    <Home />
     <ThemeContext.Consumer>
       {({ theme }) => (
         <GlobalStyles theme={theme} />
